@@ -8,7 +8,7 @@ interface User {
 }
 
 const UserLogin = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users", { next: {revalidate: 10}}); // a cada 10s, re-fetch
+  const res = await fetch("https://jsonplaceholder.typicode.com/users", { next: {revalidate: 10}}); // a cada 10s, re-fetch (guardando no caching)
   const users: User[] = await res.json();
 
   return (
